@@ -302,6 +302,10 @@ a:active {
   margin: 10px;
 }
 
+.top-padded {
+  padding-top: 50px;
+}
+
 .pull-left {
   float: left;
 }
