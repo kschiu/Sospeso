@@ -75,6 +75,7 @@ dfn {
 }
 
 h1 {
+  font-family: 'Roboto', sans-serif;
   margin: .67em 0;
   font-size: 2em;
 }
@@ -1435,4 +1436,10 @@ select {
 
 .icon-left:before {
   content: '\e822';
+}
+.icon-coffee:before {
+    content: "\e900";
+}
+.icon-community:before {
+    content: "\e972";
 }

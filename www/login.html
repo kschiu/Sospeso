@@ -10,23 +10,26 @@
           * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
               * Enable inline JS: add 'unsafe-inline' to default-src
       -->
-      <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+      <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
       <meta name="format-detection" content="telephone=no">
       <meta name="msapplication-tap-highlight" content="no">
       <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" type="text/css" href="css/ratchet.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+      <!-- <link href="css/bootstrap.icon-large.min.css" rel="stylesheet"> -->
+      <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous"> -->
       <title>Login</title>
   </head>
     <body>
       <div class="content-padded top-padded">
-        <h1 class="text-center" >Sospeso</h1>
-        <img class="img-responsive center-block" src="img/cup.png" alt="Sospeso Logo" style="width:250px;height:250px;"> 
+        <center><h1 class="text-center">Sospeso</h1>
+        <img class="img-responsive center-block" src="img/cup.png" alt="Sospeso Logo" style="width:125px;height:125px;"></center> 
         <form>
           <input type="text" placeholder="Username">
           <input type="text" placeholder="Password">
           <button class="btn btn-positive btn-block">Login</button>
         </form>
+
       </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
