@@ -31,6 +31,7 @@ main,
 nav,
 section,
 summary {
+  font-family: 'Fjalla One', sans-serif;
   display: block;
 }
 
@@ -324,12 +325,14 @@ a:active {
 }
 
 h1, h2, h3, h4, h5, h6 {
+
   margin-top: 0;
   margin-bottom: 10px;
   line-height: 1;
 }
 
 h1, .h1 {
+  font-family: 'Fjalla One', sans-serif;
   font-size: 36px;
 }
 
@@ -528,6 +531,7 @@ input[type="button"] {
 }
 
 .bar-nav {
+  /*background-color: #CBA135;*/
   top: 0;
 }
 
@@ -537,6 +541,7 @@ input[type="button"] {
   width: 100%;
   padding: 0;
   margin: 0 -10px;
+  font-family: 'Fjalla One', sans-serif;
   font-size: 17px;
   font-weight: 500;
   line-height: 44px;
@@ -546,6 +551,7 @@ input[type="button"] {
 }
 
 .title a {
+  font-family: 'Fjalla One', sans-serif;
   color: inherit;
 }
 
