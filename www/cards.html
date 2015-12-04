@@ -14,18 +14,27 @@
       <meta name="format-detection" content="telephone=no">
       <meta name="msapplication-tap-highlight" content="no">
       <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-      <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" type="text/css" href="css/ratchet.css">
       <title>Payment</title>
   </head>
     <body>
       <header class="bar bar-nav">
         <a class="icon icon-bars pull-left"></a>
-        <a class="icon icon-gear pull-right"></a>
-        <h1 class="title">Payment</h1>
+        <a class="icon icon-gear pull-right" href="settings.html"></a>
+        <h1 class="title">sospeso</h1>
       </header>
 
-      <div class="content-padded top-padded">
+       <!-- <button class="btn btn-positive btn-block" id="clickbutton">Click</button> -->
+
+       <div id="name"></div>
+       <div id="cardNum"></div>
+       <div id="expMonth"></div>
+       <div id="expDate"></div>
+       <div id="csvCode"></div>
+       <div id="zip"></div>
+
+      <!-- <div class="content-padded top-padded">
         <div class="panel panel-default">
           <div class="panel-body">
             <ul class="table-view">
@@ -53,10 +62,10 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div> -->
 
-        <nav class="bar bar-tab">
-          <a class="tab-item" href="#">
+       <nav class="bar bar-tab">
+          <a class="tab-item" href="myCoffees.html">
             <span class="icon icon-coffee"></span>
             <span class="tab-label">Coffees</span>
           </a>
@@ -67,8 +76,9 @@
         </nav>
 
       </div>
-        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/ratchet.js"></script>       
+        <script type="text/javascript" src="js/ratchet.js"></script>
+        <script type="text/javascript" src="js/cards.js"></script>        
     </body>
 </html>
