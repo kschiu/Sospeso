@@ -15,29 +15,28 @@ function alertDismissed(){
 function onResume() {
     console.log('onResume');
     /* get new member info */
-    getCardData();
+    getPurchaseList();
 }
 
-function getCardData(){
+function getPurchaseList(){
     var userid = window.localStorage.user_id;
     $.ajax({
         type: 'GET',
         contentType: "application/json", 
-        url: 'http://192.241.168.227/api/v1/users/' + userid +'/cards', 
+        url: 'http://192.241.168.227/api/v1/users/' + userid +'/purchases', 
         success: function(data){
-            // console.log(JSON.stringify(data));
+            console.log(JSON.stringify(data));
             if(data.success == "false"){
                 alert('Cannot access card information.');
                 window.location.assign('login.html');
             }
             else{
                 // populate page with information
-                window.localStorage.setItem('holder_name',data.card.holder_name);
-                window.localStorage.setItem('card_number', data.card.card_number);
-                window.localStorage.setItem('exp_month', data.card.expiration_month);
-                window.localStorage.setItem('exp_year', data.card.expiration_year);
-                window.localStorage.setItem('csv_code', data.card.csv_code);
-                window.localStorage.setItem('zip', data.card.zip_code);
+                window.localStorage.setItem('item_id',data.purchased_item.item_id);
+                window.localStorage.setItem('purchase_id', data.purchased_item.purchase_id);
+                window.localStorage.setItem('buyer_id', data.purchased_item.buyer_id);
+                window.localStorage.setItem('redeemer_id', data.purchased_item.redeemer_id);
+                window.localStorage.setItem('is_redeemed', data.purchased_item.is_redeemed);
             }
             },
         error: function(data){
@@ -51,11 +50,10 @@ function onDeviceReady(){
         onResume();
         setTimeout(function() {
             // delay loading the page, ajax needs to retrieve all request data.
-            $("#name").text(window.localStorage.holder_name);
-            $("#cardNum").html(window.localStorage.card_number);
-            $("#expMonth").html(window.localStorage.exp_month);
-            $("#expDate").html(window.localStorage.exp_year);
-            $("#csvCode").html(window.localStorage.csv_code);
-            $("#zip").html(window.localStorage.zip);
+            $("#item").text(window.localStorage.item_id);
+            $("#purchase").html(window.localStorage.purchase_id);
+            $("#buyer").html(window.localStorage.buyer_id);
+            $("#redeemer").html(window.localStorage.redeemer_id);
+            $("#is_redeemed").html(window.localStorage.is_redeemed);
         }, 1500);
 }

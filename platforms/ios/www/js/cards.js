@@ -25,7 +25,7 @@ function getCardData(){
         contentType: "application/json", 
         url: 'http://192.241.168.227/api/v1/users/' + userid +'/cards', 
         success: function(data){
-            // console.log(JSON.stringify(data));
+            console.log(JSON.stringify(data));
             if(data.success == "false"){
                 alert('Cannot access card information.');
                 window.location.assign('login.html');
