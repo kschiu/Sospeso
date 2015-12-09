@@ -535,8 +535,7 @@ input[type="button"] {
 }
 
 .bar-nav {
-  /*background-color: #CC9933;*/
-  background-color: DarkCyan;
+  /*background-color: #CBA135;*/
   top: 0;
 }
 
@@ -1285,7 +1284,6 @@ select {
   font-size: 24px;
   line-height: 1;
   text-decoration: none;
-  color: #663300;
 
   -webkit-font-smoothing: antialiased;
 }
