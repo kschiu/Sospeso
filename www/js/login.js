@@ -12,6 +12,7 @@ $(function() {
             headers: {
                 "email": email,
                 "password": pw,
+                "api_key": "8baa295c46e0b4ff3e",
             },
             url: 'http://192.241.168.227/api/v1/login', 
             success: function(data){
