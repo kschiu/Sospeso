@@ -16,11 +16,12 @@ $(function() {
             },
             url: 'http://192.241.168.227/api/v1/login', 
             success: function(data){
-                if(data.success == "false"){
-                    alert('ERROR');
+                if(data.message){
+                    alert(data.message);
                 }
                 else{
-                    console.log(JSON.stringify(data));
+                    window.localStorage.setItem("user_id", data.data);
+                    window.location.assign("myCoffees.html");
                 }
             },
             error: function(data){
