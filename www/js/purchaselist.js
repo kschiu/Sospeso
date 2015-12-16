@@ -23,22 +23,17 @@ function getPurchaseList(){
     $.ajax({
         type: 'GET',
         contentType: "application/json", 
-        url: 'http://192.241.168.227/api/v1/users/' + userid +'/purchases', 
+        url: 'http://192.241.168.227/api/v1/users/' + "1" +'/purchased_item', 
         success: function(data){
-            console.log(JSON.stringify(data));
-            if(data.success == "false"){
-                alert('Cannot access card information.');
-                window.location.assign('login.html');
+            if(data.failed){
+                alert('Cannot access your coffees.');
             }
             else{
-                // populate page with information
-                window.localStorage.setItem('item_id',data.purchased_item.item_id);
-                window.localStorage.setItem('purchase_id', data.purchased_item.purchase_id);
-                window.localStorage.setItem('buyer_id', data.purchased_item.buyer_id);
-                window.localStorage.setItem('redeemer_id', data.purchased_item.redeemer_id);
-                window.localStorage.setItem('is_redeemed', data.purchased_item.is_redeemed);
+                $.each(data.data, function(key,value) {
+                    console.log(value.item_id);
+                });
             }
-            },
+        },
         error: function(data){
             console.log('cannot connect to sospeso server');
         }
