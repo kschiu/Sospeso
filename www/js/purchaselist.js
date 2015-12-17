@@ -20,6 +20,7 @@ function onResume() {
 
 function getPurchaseList(){
     var userid = window.localStorage.user_id;
+    var coffees = [];
     $.ajax({
         type: 'GET',
         contentType: "application/json", 
@@ -29,15 +30,24 @@ function getPurchaseList(){
                 alert('Cannot access your coffees.');
             }
             else{
+                //store all coffees in this array
                 $.each(data.data, function(key,value) {
-                    console.log(value.item_id);
+                    //get all info and store in obj
+                    var coffee_info = {
+                        "item" : getItemById(value.item_id),
+                        "buyer" : getUserById(value.buyer_id),
+                        "redeemer" : getUserById(value.redeemer_id),
+                        "is_redeemed" : value.is_redeemed
+                    };
+                    coffees.push(coffee_info);  
                 });
             }
         },
         error: function(data){
-            console.log('cannot connect to sospeso server');
+            alert('ERROR');
         }
     });
+    return coffees;
 }
 
 function onDeviceReady(){
@@ -51,4 +61,54 @@ function onDeviceReady(){
             $("#redeemer").html(window.localStorage.redeemer_id);
             $("#is_redeemed").html(window.localStorage.is_redeemed);
         }, 1500);
+}
+
+
+function getItemById(item_id){
+    //initialize here for variable scope
+    var item = {}
+    $.ajax({
+        type: 'GET',
+        contentType: "application/json", 
+        url: 'http://192.241.168.227/api/v1/items/' + item_id, 
+        success: function(data){
+            if(data.failed){
+                alert('Cannot access your coffees.');
+            }
+            else{
+                item["id"] = data.data.id;
+                item["name"] = data.data.name;
+                item["price"] = data.data.price;
+            }
+        },
+        error: function(data){
+            alert('ERROR');
+        }
+    });
+    return item;
+}
+
+function getUserById(user_id){
+    //initialize here for variable scope
+    var user = {}
+    $.ajax({
+        type: 'GET',
+        contentType: "application/json", 
+        url: 'http://192.241.168.227/api/v1/users/' + user_id, 
+        success: function(data){
+            if(data.failed){
+                alert('Cannot access your Sospeso Server');
+            }
+            else{
+                user["id"] = data.data.id;
+                user["first_name"] = data.data.first_name;
+                user["last_name"] = data.data.last_name;
+                user["email"] = data.data.email;
+            }
+        },
+        error: function(data){
+            alert('ERROR');
+        }
+    });
+    return user;
 }
