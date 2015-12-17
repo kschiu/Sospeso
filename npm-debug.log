@@ -27,26 +27,26 @@
 15 silly addNameRange { name: 'ios-sim', range: '*', hasData: false }
 16 verbose request where is /ios-sim
 17 verbose request registry https://registry.npmjs.org/
-18 verbose request id 42c7492abc129316
+18 verbose request id 99430d9114119afb
 19 verbose url raw /ios-sim
 20 verbose url resolving [ 'https://registry.npmjs.org/', './ios-sim' ]
 21 verbose url resolved https://registry.npmjs.org/ios-sim
 22 verbose request where is https://registry.npmjs.org/ios-sim
-23 info trying registry request attempt 1 at 10:50:56
+23 info trying registry request attempt 1 at 16:02:51
 24 verbose etag "7MK0V7NOZT35VUEO5ET8MSDNV"
 25 http GET https://registry.npmjs.org/ios-sim
 26 http 304 https://registry.npmjs.org/ios-sim
 27 silly registry.get cb [ 304,
-27 silly registry.get   { date: 'Wed, 09 Dec 2015 15:50:54 GMT',
+27 silly registry.get   { date: 'Wed, 09 Dec 2015 21:02:52 GMT',
 27 silly registry.get     via: '1.1 varnish',
 27 silly registry.get     'cache-control': 'max-age=60',
 27 silly registry.get     etag: '"7MK0V7NOZT35VUEO5ET8MSDNV"',
 27 silly registry.get     age: '0',
 27 silly registry.get     connection: 'keep-alive',
-27 silly registry.get     'x-served-by': 'cache-ord1735-ORD',
-27 silly registry.get     'x-cache': 'HIT',
-27 silly registry.get     'x-cache-hits': '1',
-27 silly registry.get     'x-timer': 'S1449676254.766014,VS0,VE296',
+27 silly registry.get     'x-served-by': 'cache-iad2132-IAD',
+27 silly registry.get     'x-cache': 'MISS',
+27 silly registry.get     'x-cache-hits': '0',
+27 silly registry.get     'x-timer': 'S1449694972.040222,VS0,VE87',
 27 silly registry.get     vary: 'Accept' } ]
 28 verbose etag https://registry.npmjs.org/ios-sim from cache
 29 silly addNameRange number 2 { name: 'ios-sim', range: '*', hasData: true }

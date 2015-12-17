@@ -19,11 +19,12 @@ function onResume() {
 }
 
 function getPurchaseList(){
-    var userid = window.localStorage.user_id;
+    // var userid = window.localStorage.user_id;
+    var userid = 1;
     $.ajax({
         type: 'GET',
         contentType: "application/json", 
-        url: 'http://192.241.168.227/api/v1/users/' + userid +'/purchases', 
+        url: 'http://192.241.168.227/api/v1/users/' + userid +'/purchased_items', 
         success: function(data){
             console.log(JSON.stringify(data));
             if(data.success == "false"){
@@ -33,7 +34,6 @@ function getPurchaseList(){
             else{
                 // populate page with information
                 window.localStorage.setItem('item_id',data.purchased_item.item_id);
-                window.localStorage.setItem('purchase_id', data.purchased_item.purchase_id);
                 window.localStorage.setItem('buyer_id', data.purchased_item.buyer_id);
                 window.localStorage.setItem('redeemer_id', data.purchased_item.redeemer_id);
                 window.localStorage.setItem('is_redeemed', data.purchased_item.is_redeemed);
@@ -51,7 +51,6 @@ function onDeviceReady(){
         setTimeout(function() {
             // delay loading the page, ajax needs to retrieve all request data.
             $("#item").text(window.localStorage.item_id);
-            $("#purchase").html(window.localStorage.purchase_id);
             $("#buyer").html(window.localStorage.buyer_id);
             $("#redeemer").html(window.localStorage.redeemer_id);
             $("#is_redeemed").html(window.localStorage.is_redeemed);
