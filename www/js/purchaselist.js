@@ -5,7 +5,7 @@ function getPurchaseList(){
     $.ajax({
         type: 'GET',
         contentType: "application/json", 
-        url: 'http://192.241.168.227/api/v1/users/' + userid +'/purchased_item', 
+        url: 'http://192.241.168.227/api/v1/users/' + "1" +'/purchased_item', 
         success: function(data){
             if(data.failed){
                 alert('Cannot access your coffees.');
@@ -39,7 +39,7 @@ function populateMyCoffees(){
             var value = coffees[key];
             if (value.is_redeemed){
                 $( "#coffeeList" ).append( '<li class="table-view-cell media"> \
-                    <a class="navigate-right">\
+                    <a class="navigate-right" onClick="setDetailItem('+value.item.id +')">\
                         <img class="media-object pull-left" src="img/tazza.jpeg" style="width:50px;height:50px;">\
                           <div class="media-body">\
                             '+ value.item.name +'\
@@ -50,6 +50,13 @@ function populateMyCoffees(){
             }
         }
     }
+}
+
+//stores the item id in local storage
+//for the detailed view
+function setDetailItem(item_id){
+    window.localStorage.setItem("itemDetail", item_id)
+    window.location.assign("coffeeDetail.html");
 }
 
 function loadMyCoffees(){
