@@ -17,10 +17,12 @@ function onResume() {
     /* get new member info */
     getPurchaseList();
 }
+    
+    
+var coffees=[];
 
 function getPurchaseList(){
     var userid = window.localStorage.user_id;
-    var coffees = [];
     $.ajax({
         type: 'GET',
         contentType: "application/json", 
@@ -32,6 +34,19 @@ function getPurchaseList(){
             else{
                 //store all coffees in this array
                 $.each(data.data, function(key,value) {
+                //     if (!value.is_redeemed){
+                //         var item = getItemById(value.item_id);
+                //         console.log(item[0]);
+                //         $( "#coffeeList" ).append( '<li class="table-view-cell media"> \
+                //             <a class="navigate-right">\
+                //                 <img class="media-object pull-left" src="img/tazza.jpeg" style="width:50px;height:50px;">\
+                //                   <div class="media-body">\
+                //                     Tall Cappucino\
+                //                     <p>From '+ item.name +'</p>\
+                //                   </div>\
+                //             </a>\
+                //         </li>' );
+                //     }
                     //get all info and store in obj
                     var coffee_info = {
                         "item" : getItemById(value.item_id),
@@ -47,7 +62,23 @@ function getPurchaseList(){
             alert('ERROR');
         }
     });
-    return coffees;
+}
+
+function populateMyCoffees(){
+    for(var key in coffees) {
+        var value = coffees[key];
+        if (!value.is_redeemed){
+            $( "#coffeeList" ).append( '<li class="table-view-cell media"> \
+                <a class="navigate-right">\
+                    <img class="media-object pull-left" src="img/tazza.jpeg" style="width:50px;height:50px;">\
+                      <div class="media-body">\
+                        '+ value.item.name +'\
+                        <p>From '+ value.redeemer.first_name +'</p>\
+                      </div>\
+                </a>\
+            </li>' );
+        }
+    }
 }
 
 function onDeviceReady(){
