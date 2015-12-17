@@ -53,8 +53,8 @@ function populateMyCoffees(){
 }
 
 function loadMyCoffees(){
+    $( "#coffeeList" ).append('<center><img src="img/load.gif" style="width:75px;height:75px;"><center>')
     getPurchaseList();
-    //Put up a loading icon??
     setTimeout(function(){
         populateMyCoffees();
     }, 500);
