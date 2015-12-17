@@ -1,24 +1,3 @@
-function onLoad() {
-    console.log('onLoad');
-    document.addEventListener("deviceready", onDeviceReady, false);
-    document.addEventListener("resume", onResume, false);
-}
-
-document.addEventListener("resume", onResume, false);
-document.addEventListener("deviceready", onDeviceReady, false);
-// Handle the resume event
-//
-function alertDismissed(){
-    //Do nothing on dialog box close
-    return;
-}
-function onResume() {
-    console.log('onResume');
-    /* get new member info */
-    getPurchaseList();
-}
-    
-    
 var coffees=[];
 
 function getPurchaseList(){
@@ -26,7 +5,7 @@ function getPurchaseList(){
     $.ajax({
         type: 'GET',
         contentType: "application/json", 
-        url: 'http://192.241.168.227/api/v1/users/' + "1" +'/purchased_item', 
+        url: 'http://192.241.168.227/api/v1/users/' + userid +'/purchased_item', 
         success: function(data){
             if(data.failed){
                 alert('Cannot access your coffees.');
@@ -34,19 +13,6 @@ function getPurchaseList(){
             else{
                 //store all coffees in this array
                 $.each(data.data, function(key,value) {
-                //     if (!value.is_redeemed){
-                //         var item = getItemById(value.item_id);
-                //         console.log(item[0]);
-                //         $( "#coffeeList" ).append( '<li class="table-view-cell media"> \
-                //             <a class="navigate-right">\
-                //                 <img class="media-object pull-left" src="img/tazza.jpeg" style="width:50px;height:50px;">\
-                //                   <div class="media-body">\
-                //                     Tall Cappucino\
-                //                     <p>From '+ item.name +'</p>\
-                //                   </div>\
-                //             </a>\
-                //         </li>' );
-                //     }
                     //get all info and store in obj
                     var coffee_info = {
                         "item" : getItemById(value.item_id),
@@ -65,35 +31,36 @@ function getPurchaseList(){
 }
 
 function populateMyCoffees(){
-    for(var key in coffees) {
-        var value = coffees[key];
-        if (!value.is_redeemed){
-            $( "#coffeeList" ).append( '<li class="table-view-cell media"> \
-                <a class="navigate-right">\
-                    <img class="media-object pull-left" src="img/tazza.jpeg" style="width:50px;height:50px;">\
-                      <div class="media-body">\
-                        '+ value.item.name +'\
-                        <p>From '+ value.redeemer.first_name +'</p>\
-                      </div>\
-                </a>\
-            </li>' );
+    $( "#coffeeList" ).empty();
+    if (coffees.length == 0){
+        $( "#coffeeList" ).append('<center><p> You have no coffees!</p><center>')
+    } else {
+        for(var key in coffees) {
+            var value = coffees[key];
+            if (value.is_redeemed){
+                $( "#coffeeList" ).append( '<li class="table-view-cell media"> \
+                    <a class="navigate-right">\
+                        <img class="media-object pull-left" src="img/tazza.jpeg" style="width:50px;height:50px;">\
+                          <div class="media-body">\
+                            '+ value.item.name +'\
+                            <p>From '+ value.redeemer.first_name +'</p>\
+                          </div>\
+                    </a>\
+                </li>' );
+            }
         }
     }
 }
 
-function onDeviceReady(){
-    console.log('onDeviceReady');
-        onResume();
-        setTimeout(function() {
-            // delay loading the page, ajax needs to retrieve all request data.
-            $("#item").text(window.localStorage.item_id);
-            $("#purchase").html(window.localStorage.purchase_id);
-            $("#buyer").html(window.localStorage.buyer_id);
-            $("#redeemer").html(window.localStorage.redeemer_id);
-            $("#is_redeemed").html(window.localStorage.is_redeemed);
-        }, 1500);
+function loadMyCoffees(){
+    getPurchaseList();
+    //Put up a loading icon??
+    setTimeout(function(){
+        populateMyCoffees();
+    }, 500);
 }
 
+loadMyCoffees();
 
 function getItemById(item_id){
     //initialize here for variable scope
