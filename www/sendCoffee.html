@@ -28,22 +28,20 @@
       </header>
       <div class="content-padded top-padded">
 
-        <h1>Send a ...</h1>
+        <h1>Send an Item</h1>
 
-        <form>
+        <form accept-charset="utf-8" id="submit">
           <br>
-           <h4>choose type of coffee</h4>
-           <input id="item_id"></input>
-           
-          <!--for every pre-populated user-->
-          <!-- <button class="btn btn-block">Coffee Item insert coffee type</button> -->
+          <h4>choose type of coffee</h4>
+          <select id="item_id">
+             <option value="">-- Select --</option>
+          </select>
           <hr>
           <h4>to whom?</h4>
-          <input id="redeemer_id"></input>
-<!--           <input type="text" placeholder="Full name">
-          <textarea rows="5"></textarea> -->
-          <!--for every pre-populated user-->
-          <!-- <button class="btn btn-block">Redeemer</button> -->
+          <select id="redeemer_id">
+             <option value="">To Community</option>
+          </select>
+          <button class="btn btn-positive btn-block" id="submit">Submit</button>
         </form>
 
         <nav class="bar bar-tab">
@@ -60,6 +58,7 @@
       </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/userController.js"></script>
+        <script type="text/javascript" src="js/sendCoffee.js"></script>
         <script type="text/javascript" src="js/ratchet.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
