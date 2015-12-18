@@ -45,7 +45,7 @@ function populateMyCoffees(){
                         <img class="media-object pull-left" src="img/tazza.jpeg" style="width:50px;height:50px;">\
                           <div class="media-body">\
                             '+ value.item.name +'\
-                            <p>From '+ value.redeemer.first_name +'</p>\
+                            <p>From '+ value.buyer.first_name +'</p>\
                           </div>\
                     </a>\
                 </li>');
