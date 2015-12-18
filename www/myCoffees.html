@@ -14,22 +14,44 @@
       <meta name="format-detection" content="telephone=no">
       <meta name="msapplication-tap-highlight" content="no">
       <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+      <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" type="text/css" href="css/ratchet.css">
-      <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+      <link rel="stylesheet" href="css/jquery.sidr.light.css">
       <title>My Coffees</title>
   </head>
     <body>
       <header class="bar bar-nav">
-        <a class="icon icon-bars pull-left"></a>
         <a class="icon icon-plus pull-right" href="sendCoffee.html" data-transition="fade"></a>
         <h1 class="title"><img src="img/sospesologo.png" style="height:40px;width:140px;" alt="Sospeso Logo"></h1>  
       </header>
+
+      <nav id="menu"><br><br>
+        <center><img src="img/user.png"><br><br>
+            <h2>My Account</h2><br><br></center>
+
+            <ul class="table-view">
+  <li class="table-view-cell">
+    <a href="settings.html">
+      Settings
+    </a>
+  </li>
+  <li class="table-view-cell">
+    <a href="cards.html">
+      Cards and Payment
+    </a>
+  </li>
+</ul>
+
+
+        </nav>
+
       <div class="content-padded top-padded">
 
         <center><h1>My Coffees</h1></center>
 
-        <ul class="table-view" id ="coffeeList">
-        </ul>
+        <main id="panel">
+          <ul class="table-view" id ="coffeeList"></ul>
+        </main>
         
         <nav class="bar bar-tab">
           <a class="tab-item" href="myCoffees.html" data-transition="fade">
@@ -43,9 +65,19 @@
         </nav>
 
       </div>
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="js/cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/ratchet.js"></script>
-        <script type="text/javascript" src="js/purchaselist.js"></script>      
+        <script type="text/javascript" src="js/purchaselist.js"></script> 
+        <script src="js/slideout.js"></script>
+        <script>
+  var slideout = new Slideout({
+    'panel': document.getElementById('panel'),
+    'menu': document.getElementById('menu'),
+    'padding': 256,
+    'tolerance': 70
+  });
+</script>              
     </body>
 </html>

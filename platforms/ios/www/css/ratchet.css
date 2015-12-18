@@ -11,14 +11,14 @@
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 
 html {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 article,
@@ -33,7 +33,7 @@ main,
 nav,
 section,
 summary {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   display: block;
 }
 
@@ -78,7 +78,7 @@ dfn {
 }
 
 h1 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin: .67em 0;
   font-size: 2em;
 }
@@ -244,7 +244,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 17px;
   line-height: 21px;
   color: #000;
@@ -252,7 +252,7 @@ body {
 }
 
 a {
-  color: #428bca;
+  color: DarkCyan;
   text-decoration: none;
 
   -webkit-tap-highlight-color: transparent;
@@ -334,7 +334,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, .h1 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 36px;
 }
 
@@ -394,8 +394,8 @@ p {
 
 .btn-primary {
   color: #fff;
-  background-color: #428bca;
-  border: 1px solid #428bca;
+  background-color: DarkCyan;
+  border: 1px solid DarkCyan;
 }
 .btn-primary:active, .btn-primary.active {
   color: #fff;
@@ -429,7 +429,7 @@ p {
   background-color: transparent;
 }
 .btn-outlined.btn-primary {
-  color: #428bca;
+  color: DarkCyan;
 }
 .btn-outlined.btn-positive {
   color: #5cb85c;
@@ -444,7 +444,7 @@ p {
 .btn-link {
   padding-top: 6px;
   padding-bottom: 6px;
-  color: #428bca;
+  color: DarkCyan;
   background-color: transparent;
   border: 0;
 }
@@ -544,7 +544,7 @@ input[type="button"] {
   width: 100%;
   padding: 0;
   margin: 0 -10px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 17px;
   font-weight: 500;
   line-height: 44px;
@@ -554,7 +554,7 @@ input[type="button"] {
 }
 
 .title a {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: inherit;
 }
 
@@ -577,7 +577,7 @@ input[type="button"] {
   vertical-align: middle;
 }
 .bar-tab .tab-item.active, .bar-tab .tab-item:active {
-  color: #428bca;
+  color: DarkCyan;
 }
 .bar-tab .tab-item .icon {
   top: 3px;
@@ -588,7 +588,9 @@ input[type="button"] {
 }
 .bar-tab .tab-item .icon ~ .tab-label {
   display: block;
-  font-size: 11px;
+  font-size: 13px;
+  font-weight: bold;
+  color: DarkCyan;
 }
 
 .bar .btn {
@@ -611,7 +613,7 @@ input[type="button"] {
   padding: 0;
   font-size: 16px;
   line-height: 44px;
-  color: #428bca;
+  color: DarkCyan;
   border: 0;
 }
 .bar .btn-link:active, .bar .btn-link.active {
@@ -683,10 +685,10 @@ input[type="button"] {
 
 .badge-primary {
   color: #fff;
-  background-color: #428bca;
+  background-color: DarkCyan;
 }
 .badge-primary.badge-inverted {
-  color: #428bca;
+  color: DarkCyan;
 }
 
 .badge-positive {
@@ -839,7 +841,7 @@ input,
 textarea,
 button,
 select {
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 17px;
 }
 
@@ -922,7 +924,7 @@ select {
   float: left;
   width: 35%;
   padding: 8px 15px;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   line-height: 1.1;
 }
 
@@ -968,10 +970,10 @@ select {
 }
 
 .segmented-control-primary {
-  border-color: #428bca;
+  border-color: DarkCyan;
 }
 .segmented-control-primary .control-item {
-  color: #428bca;
+  color: DarkCyan;
   border-color: inherit;
 }
 .segmented-control-primary .control-item:active {
@@ -979,7 +981,7 @@ select {
 }
 .segmented-control-primary .control-item.active {
   color: #fff;
-  background-color: #428bca;
+  background-color: DarkCyan;
 }
 
 .segmented-control-positive {
@@ -1283,7 +1285,7 @@ select {
   font-size: 24px;
   line-height: 1;
   text-decoration: none;
-  color: #663300;
+  color: #663000;
 
   -webkit-font-smoothing: antialiased;
 }
@@ -1465,113 +1467,6 @@ select {
   left: 0;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  background-image: url("img/cafebg.png");
   background-position: center top;
   z-index: 1
-}
-
-body, html {
-    height: 100%;
-    margin: 0;
-    overflow:hidden;
-    font-family: helvetica;
-    font-weight: 100;
-}
-.container {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    -webkit-transition:  left 0.4s ease-in-out;
-    -moz-transition:  left 0.4s ease-in-out;
-    -ms-transition:  left 0.4s ease-in-out;
-    -o-transition:  left 0.4s ease-in-out;
-    transition:  left 0.4s ease-in-out;
-}
-.container.open-sidebar {
-    left: 240px;
-}
- 
-.swipe-area {
-    position: absolute;
-    width: 50px;
-    left: 0;
-top: 0;
-    height: 100%;
-    background: #f3f3f3;
-    z-index: 0;
-}
-#sidebar {
-    background: #DF314D;
-    position: absolute;
-    width: 240px;
-    height: 100%;
-    left: -240px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-}
-#sidebar ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-#sidebar ul li {
-    margin: 0;
-}
-#sidebar ul li a {
-    padding: 15px 20px;
-    font-size: 16px;
-    font-weight: 100;
-    color: white;
-    text-decoration: none;
-    display: block;
-    border-bottom: 1px solid #C9223D;
-    -webkit-transition:  background 0.3s ease-in-out;
-    -moz-transition:  background 0.3s ease-in-out;
-    -ms-transition:  background 0.3s ease-in-out;
-    -o-transition:  background 0.3s ease-in-out;
-    transition:  background 0.3s ease-in-out;
-}
-#sidebar ul li:hover a {
-    background: #C9223D;
-}
-.main-content {
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    position: relative;
-}
-.main-content .content{
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-padding-left: 60px;
-width: 100%;
-}
-.main-content .content h1{
-    font-weight: 100;
-}
-.main-content .content p{
-    width: 100%;
-    line-height: 160%;
-}
-.main-content #sidebar-toggle {
-    background: #DF314D;
-    border-radius: 3px;
-    display: block;
-    position: relative;
-    padding: 10px 7px;
-    float: left;
-}
-.main-content #sidebar-toggle .bar{
-     display: block;
-    width: 18px;
-    margin-bottom: 3px;
-    height: 2px;
-    background-color: #fff;
-    border-radius: 1px;   
-}
-.main-content #sidebar-toggle .bar:last-child{
-     margin-bottom: 0;   
 }

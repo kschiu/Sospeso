@@ -36,17 +36,17 @@ function getPurchaseList(){
 function populateMyCoffees(){
     $( "#coffeeList" ).empty();
     if (coffees.length == 0){
-        $( "#coffeeList" ).append('<center><p> You have no coffees!</p><center>')
+        $( "#coffeeList" ).append('<br><br><center><h3> You have no coffees! </h3> <br> <h3> Try sending a few coffees to your friends instead?</h3><br><center>')
     } else {
         for(var key in coffees) {
             var value = coffees[key];
             if (!value.is_redeemed){
                 $( "#coffeeList" ).append( '<li class="table-view-cell media"> \
                     <a class="navigate-right" onClick="setDetailItem('+value.item.id+', '+value.purchaseItemId +', ' + '\'' + value.message + '\'' +')">\
-                        <img class="media-object pull-left" src="img/tazza.jpeg" style="width:50px;height:50px;">\
+                        <img class="media-object pull-left" src="img/coffeeimg.png" style="width:50px;height:50px;">\
                           <div class="media-body">\
                             '+ value.item.name +'\
-                            <p>From '+ value.buyer.first_name +'</p>\
+                            </h4><h5>From '+ value.buyer.first_name + " " + value.buyer.last_name +'</h5>\
                           </div>\
                     </a>\
                 </li>');

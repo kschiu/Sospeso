@@ -15,24 +15,35 @@
       <meta name="msapplication-tap-highlight" content="no">
       <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
       <link rel="stylesheet" type="text/css" href="css/ratchet.css">
+      <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
       <title>Detail View</title>
   </head>
     <body>
       <header class="bar bar-nav">
-        <a class="icon icon-bars pull-left"></a>
-        <a class="icon icon-plus pull-right" href="settings.html" data-transition="fade"></a>
+        <a class="icon icon-bars pull-left" href="settings.html" data-transition="fade"></a>
+        <a class="icon icon-plus pull-right"></a>
         <h1 class="title"><img src="img/sospesologo.png" style="height:40px;width:140px;" alt="Sospeso Logo"></h1>  
       </header>
       <div class="content-padded top-padded">
 
         <center><h1>Detail View</h1></center>
+        <ul class="table-view">
+          <li class="table-view-cell media">
+            <img class="media-object pull-left" src="img/tazza.jpeg" style="width:50px;height:50px;">
+              <div class="media-body" id="itemName">
+              </div>
+          </li>
+        </ul>
+        
+        <center><div class="content-padded"id ="qrcode">
+        </div></center>
         
         <nav class="bar bar-tab">
           <a class="tab-item" href="myCoffees.html" data-transition="fade">
             <span class="icon icon-coffee"></span>
             <span class="tab-label">Coffees</span>
           </a>
-          <a class="tab-item" href="#">
+          <a class="tab-item" href="community.html">
             <span class="icon icon-community"></span>
             <span class="tab-label">Community</span>
           </a>
@@ -40,7 +51,9 @@
 
       </div>
         <script type="text/javascript" src="js/cordova.js"></script>
+        <script type="text/javascript" src="js/qrcode.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/coffeeDetailController.js"></script>
         <script type="text/javascript" src="js/ratchet.js"></script>       
     </body>
 </html>
