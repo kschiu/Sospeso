@@ -35,7 +35,7 @@ function getPurchaseList(){
 function populateMyCoffees(){
     $( "#coffeeList" ).empty();
     if (coffees.length == 0){
-        $( "#coffeeList" ).append('<center><p> You have no coffees!</p><center>')
+        $( "#coffeeList" ).append('<br><br><center><h3> You have no coffees! </h3> <br> <h3> Try sending a few coffees to your friends instead?</h3><br><center>')
     } else {
         for(var key in coffees) {
             var value = coffees[key];
