@@ -15,29 +15,81 @@
       <meta name="msapplication-tap-highlight" content="no">
       <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
       <link rel="stylesheet" type="text/css" href="css/ratchet.css">
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
       <title>My Coffees</title>
+
+       <script type="text/javascript">
+      $(window).load(function(){
+        $("[data-toggle]").click(function() {
+          var toggle_el = $(this).data("toggle");
+          $(toggle_el).toggleClass("open-sidebar");
+        });
+         $(".swipe-area").swipe({
+              swipeStatus:function(event, phase, direction, distance, duration, fingers)
+                  {
+                      if (phase=="move" && direction =="right") {
+                           $(".container").addClass("open-sidebar");
+                           return false;
+                      }
+                      if (phase=="move" && direction =="left") {
+                           $(".container").removeClass("open-sidebar");
+                           return false;
+                      }
+                  }
+          }); 
+      });
+      
+    </script>
   </head>
     <body>
       <header class="bar bar-nav">
-        <a class="icon icon-bars pull-left"></a> 
+        <!-- <a class="icon icon-bars pull-left"></a> -->
+
+        <div class="container">
+    <div id="sidebar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Users</a></li>
+                <li><a href="#">Sign Out</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="swipe-area"></div>
+        <a href="#" data-toggle=".container" id="sidebar-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+    </div>
+</div>
+
+
         <a class="icon icon-plus pull-right" href="sendCoffee.html" data-transition="fade"></a>
         <h1 class="title"><img src="img/sospesologo.png" style="height:40px;width:140px;" alt="Sospeso Logo"></h1>  
       </header>
       <div class="content-padded top-padded">
 
-        <center><h1>Community Board</h1></center>
+        <center><h1>My Coffees</h1></center>
+
+      <div id="item"></div>
+       <div id="buyer"></div>
+       <div id="redeemer"></div>
+       <div id="is_redeemed"></div>
+
 
         <ul class="table-view">
           <li class="table-view-cell media">
-            <a class="navigate-right">
-            <img class="media-object pull-left" src="img/coffeeimg.png">
-            <div class="media-body">
+    <a class="navigate-right">
+      <img class="media-object pull-left" src="img/coffeeimg.png">
+      <div class="media-body">
               <!-- Insert item name/desc ex: "Tall Cappucino"-->
               <p>From <!-- Insert buyer name ex: Kevin Chiu"--></p>
             </div>
-            </a>
-          </li>
-        </ul>
+    </a>
+  </li>
+</ul>
         
         <nav class="bar bar-tab">
           <a class="tab-item" href="myCoffees.html" data-transition="fade">
