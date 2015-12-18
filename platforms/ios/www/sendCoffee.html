@@ -17,60 +17,50 @@
       <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
       <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" type="text/css" href="css/ratchet.css">
+      <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+      
       <title>Send Coffee</title>
   </head>
     <body>
       <header class="bar bar-nav">
-        <a class="icon icon-left-nav pull-left" href="myCoffee.html" data-transition="fade"></a>
+        <a class="icon icon-left-nav pull-left" href="myCoffees.html" data-transition="fade"></a>
         <h1 class="title"><img src="img/sospesologo.png" style="height:40px;width:140px;" alt="Sospeso Logo"></h1>  
       </header>
       <div class="content-padded top-padded">
 
-        <form>
-          <input type="search" placeholder="Search">
-        </form>
+        <h1>Send a ...</h1>
 
-<!--         <ul class="table-view">
-          <li class="table-view-cell media">
-            <a class="navigate-right">
-              <img class="media-object pull-left" src="http://placehold.it/42x42">
-              <div class="media-body">
-                Ben Lam
-              </div>
-            </a>
-          </li>
-          <li class="table-view-cell media">
-            <a class="navigate-right">
-              <img class="media-object pull-left" src="http://placehold.it/42x42">
-              <div class="media-body">
-                Kevin Chiu
-              </div>
-            </a>
-          </li>
-          <li class="table-view-cell media">
-            <a class="navigate-right">
-              <img class="media-object pull-left" src="http://placehold.it/42x42">
-              <div class="media-body">
-                Pranita R.
-              </div>
-            </a>
-          </li>
-        </ul> -->
+        <form>
+          <br>
+           <h4>choose type of coffee</h4>
+          <!--for every pre-populated user-->
+          <button class="btn btn-primary btn-block">Coffee Item<!--insert coffee type--></button>
+          <hr>
+          <h4>to whom?</h4>
+<!--           <input type="text" placeholder="Full name">
+          <textarea rows="5"></textarea> -->
+          <!--for every pre-populated user-->
+          <button class="btn btn-primary btn-block">Redeemer<!--insert name of the redeemer--></button>
+          <hr>
+          <h3>Add a message:</h3>
+          <textarea rows="5"></textarea>
+        </form>
 
         <nav class="bar bar-tab">
           <a class="tab-item" href="myCoffees.html" data-transition="fade">
             <span class="icon icon-coffee" href="myCoffees.html"></span>
             <span class="tab-label" href="myCoffees.html">Coffees</span>
           </a>
-          <a class="tab-item" href="#">
+          <a class="tab-item" href="community.html">
             <span class="icon icon-community"></span>
             <span class="tab-label">Community</span>
           </a>
         </nav>
 
       </div>
-        <script type="text/javascript" src="js/cordova.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/userController.js"></script>
+        <script type="text/javascript" src="js/ratchet.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/ratchet.js"></script>       
     </body>
 </html>
