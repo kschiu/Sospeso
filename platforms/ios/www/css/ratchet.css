@@ -11,14 +11,14 @@
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 
 html {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 article,
@@ -33,7 +33,7 @@ main,
 nav,
 section,
 summary {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   display: block;
 }
 
@@ -78,7 +78,7 @@ dfn {
 }
 
 h1 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin: .67em 0;
   font-size: 2em;
 }
@@ -244,7 +244,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 17px;
   line-height: 21px;
   color: #000;
@@ -544,7 +544,7 @@ input[type="button"] {
   width: 100%;
   padding: 0;
   margin: 0 -10px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 17px;
   font-weight: 500;
   line-height: 44px;
@@ -554,7 +554,7 @@ input[type="button"] {
 }
 
 .title a {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: inherit;
 }
 
@@ -587,6 +587,7 @@ input[type="button"] {
   padding-bottom: 0;
 }
 .bar-tab .tab-item .icon ~ .tab-label {
+  font-family: 'Raleway', sans-serif;
   display: block;
   font-size: 13px;
   font-weight: bold;
@@ -841,7 +842,7 @@ input,
 textarea,
 button,
 select {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 17px;
 }
 
@@ -924,7 +925,7 @@ select {
   float: left;
   width: 35%;
   padding: 8px 15px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   line-height: 1.1;
 }
 
@@ -1469,4 +1470,38 @@ select {
   -webkit-overflow-scrolling: touch;
   background-position: center top;
   z-index: 1
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.slideout-menu {
+  background-color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  width: 256px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: none;
+}
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
 }

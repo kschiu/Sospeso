@@ -78,15 +78,13 @@ $(function sendCoffee() {
         var item_id = $("#item_id").val();
         var redeemer_id = $("#redeemer_id").val();
         var card_id = 1;
-        var message = $("#message").val();
 
         var d = {"buyer_id": buyer_id,
                 "user_id" : user_id,
                 "item_id" : item_id,
                 "redeemer_id" : redeemer_id,
                 "card_id" : card_id,
-                "is_redeemed" : false,
-                "message": message
+                "is_redeemed" : false
         }
 
         console.log(d);
@@ -100,7 +98,7 @@ $(function sendCoffee() {
                 alert("Thank you for your purchase!")
             },
             error: function(data){
-                console.log(data.statusText);
+                alert('ERROR2');
             }
         }); 
     });

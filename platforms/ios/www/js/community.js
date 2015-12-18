@@ -1,11 +1,10 @@
 var coffees=[];
 
 function getPurchaseList(){
-    var userid = window.localStorage.user_id;
     $.ajax({
         type: 'GET',
         contentType: "application/json", 
-        url: 'http://192.241.168.227/api/v1/itemsByRedeemer/' + userid, 
+        url: 'http://192.241.168.227/api/v1/community', 
         success: function(data){
             if(data.failed){
                 alert('Cannot access your coffees.');
@@ -18,8 +17,8 @@ function getPurchaseList(){
                         "purchaseItemId" : value.id,
                         "item" : getItemById(value.item_id),
                         "buyer" : getUserById(value.buyer_id),
-                        "redeemer" : getUserById(value.redeemer_id),
-                        "is_redeemed" : value.is_redeemed
+                        "is_redeemed" : value.is_redeemed,
+                        "message" : value.message
                     };
                     console.log(coffee_info);
                     coffees.push(coffee_info);  
@@ -41,11 +40,11 @@ function populateMyCoffees(){
             var value = coffees[key];
             if (!value.is_redeemed){
                 $( "#coffeeList" ).append( '<li class="table-view-cell media"> \
-                    <a class="navigate-right" onClick="setDetailItem('+value.item.id+', '+value.purchaseItemId +')">\
-                        <img class="media-object pull-left" src="img/coffeeimg.png" style="width:50px;height:50px;">\
-                          <div class="media-body"><h4>\
+                    <a class="navigate-right" onClick="setDetailItem('+value.item.id+', '+value.purchaseItemId +', ' + '\'' + value.message + '\'' +')">\
+                        <img class="media-object pull-left" src="img/tazza.jpeg" style="width:50px;height:50px;">\
+                          <div class="media-body">\
                             '+ value.item.name +'\
-                            </h4><h5>From '+ value.buyer.first_name + " " + value.buyer.last_name +'</h5>\
+                            <p>From '+ value.buyer.first_name +'</p>\
                           </div>\
                     </a>\
                 </li>');
@@ -56,9 +55,10 @@ function populateMyCoffees(){
 
 //stores the item id in local storage
 //for the detailed view
-function setDetailItem(item_id, purchaseItemId){
+function setDetailItem(item_id, purchaseItemId, message){
     window.localStorage.setItem("itemDetail", item_id);
     window.localStorage.setItem("purchaseItemId", purchaseItemId);
+    window.localStorage.setItem("message", message);
     window.location.assign("coffeeDetail.html");
 }
 
