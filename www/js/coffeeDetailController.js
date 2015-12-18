@@ -26,7 +26,7 @@ function populatePage(){
     getItemFromStorage();
     setTimeout(function(){   
         $("#itemName").append(item.name);
-        new QRCode(document.getElementById("qrcode"), "http://192.241.168.227/api/v1/items/" + window.localStorage.itemDetail);
+        new QRCode(document.getElementById("qrcode"), "http://192.241.168.227/api/v1/redeem/" + window.localStorage.purchaseItemId);
     }, 500)
 }
 
