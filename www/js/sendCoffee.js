@@ -52,7 +52,6 @@ function getItems(){
 }
 
 function populateFields(){
-    console.log("DAS");
     getItems();
     getUsers();
     setTimeout(function(){
