@@ -17,54 +17,10 @@
       <link rel="stylesheet" type="text/css" href="css/ratchet.css">
       <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
       <title>My Coffees</title>
-
-       <script type="text/javascript">
-      $(window).load(function(){
-        $("[data-toggle]").click(function() {
-          var toggle_el = $(this).data("toggle");
-          $(toggle_el).toggleClass("open-sidebar");
-        });
-         $(".swipe-area").swipe({
-              swipeStatus:function(event, phase, direction, distance, duration, fingers)
-                  {
-                      if (phase=="move" && direction =="right") {
-                           $(".container").addClass("open-sidebar");
-                           return false;
-                      }
-                      if (phase=="move" && direction =="left") {
-                           $(".container").removeClass("open-sidebar");
-                           return false;
-                      }
-                  }
-          }); 
-      });
-      
-    </script>
   </head>
     <body>
       <header class="bar bar-nav">
-        <!-- <a class="icon icon-bars pull-left"></a> -->
-
-        <div class="container">
-    <div id="sidebar">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Explore</a></li>
-            <li><a href="#">Users</a></li>
-                <li><a href="#">Sign Out</a></li>
-        </ul>
-    </div>
-    <div class="main-content">
-        <div class="swipe-area"></div>
-        <a href="#" data-toggle=".container" id="sidebar-toggle">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </a>
-    </div>
-</div>
-
-
+        <a class="icon icon-bars pull-left"></a>
         <a class="icon icon-plus pull-right" href="sendCoffee.html" data-transition="fade"></a>
         <h1 class="title"><img src="img/sospesologo.png" style="height:40px;width:140px;" alt="Sospeso Logo"></h1>  
       </header>

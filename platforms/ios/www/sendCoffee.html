@@ -17,6 +17,8 @@
       <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
       <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" type="text/css" href="css/ratchet.css">
+      <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+      
       <title>Send Coffee</title>
   </head>
     <body>
@@ -26,14 +28,22 @@
       </header>
       <div class="content-padded top-padded">
 
-        <h1>Send a coffee</h1>
+        <h1>Send a ...</h1>
 
         <form>
-          <h3>To whom?</h3>
-          <input type="text" placeholder="Full name">
-          <textarea rows="5"></textarea>
+          <br>
+           <h4>choose type of coffee</h4>
           <!--for every pre-populated user-->
-          <button class="btn btn-primary btn-block"></button>
+          <button class="btn btn-primary btn-block">Coffee Item<!--insert coffee type--></button>
+          <hr>
+          <h4>to whom?</h4>
+<!--           <input type="text" placeholder="Full name">
+          <textarea rows="5"></textarea> -->
+          <!--for every pre-populated user-->
+          <button class="btn btn-primary btn-block">Redeemer<!--insert name of the redeemer--></button>
+          <hr>
+          <h3>Add a message:</h3>
+          <textarea rows="5"></textarea>
         </form>
 
         <nav class="bar bar-tab">
@@ -48,8 +58,9 @@
         </nav>
 
       </div>
-        <script type="text/javascript" src="js/cordova.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/userController.js"></script>
+        <script type="text/javascript" src="js/ratchet.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/ratchet.js"></script>       
     </body>
 </html>

@@ -40,7 +40,7 @@ function populateMyCoffees(){
             if (value.is_redeemed){
                 $( "#coffeeList" ).append( '<li class="table-view-cell media"> \
                     <a class="navigate-right" onClick="setDetailItem('+value.item.id +')">\
-                        <img class="media-object pull-left" src="img/tazza.jpeg" style="width:50px;height:50px;">\
+                        <img class="media-object pull-left" src="img/titlecoffee.png" style="width:50px;height:50px;">\
                           <div class="media-body">\
                             '+ value.item.name +'\
                             <p>From '+ value.redeemer.first_name +'</p>\
