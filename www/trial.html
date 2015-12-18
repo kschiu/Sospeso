@@ -14,32 +14,34 @@
       <meta name="format-detection" content="telephone=no">
       <meta name="msapplication-tap-highlight" content="no">
       <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+      <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" type="text/css" href="css/ratchet.css">
+      <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
       <title>Login</title>
   </head>
     <body>
-     
-     <div class="slider" id="mySlider">
-  <div class="slide-group">
-    <div class="slide">
-      <img src="/assets/img/slide-1.jpg">
-      <span class="slide-text">
-        <span class="icon icon-left-nav"></span>
-        Slide me
-      </span>
-    </div>
-    <div class="slide">
-      <img src="/assets/img/slide-2.jpg">
-    </div>
-    <div class="slide">
-      <img src="/assets/img/slide-3.jpg">
-    </div>
-  </div>
-</div>
+      <nav id="menu">
+  <header>
+    <h2>Menu</h2>
+  </header>
+</nav>
 
-      </div>
+<main id="panel">
+  <header>
+    <h2>Panel</h2>
+  </header>
+</main>
         <script type="text/javascript" src="js/cordova.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/ratchet.js"></script>       
+        <script type="text/javascript" src="js/ratchet.js"></script>
+        <script>
+  var slideout = new Slideout({
+    'panel': document.getElementById('panel'),
+    'menu': document.getElementById('menu'),
+    'padding': 256,
+    'tolerance': 70
+  });
+</script>       
     </body>
 </html>
