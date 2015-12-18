@@ -1,11 +1,10 @@
 var coffees=[];
 
 function getPurchaseList(){
-    var userid = window.localStorage.user_id;
     $.ajax({
         type: 'GET',
         contentType: "application/json", 
-        url: 'http://192.241.168.227/api/v1/itemsByRedeemer/' + userid, 
+        url: 'http://192.241.168.227/api/v1/community', 
         success: function(data){
             if(data.failed){
                 alert('Cannot access your coffees.');
@@ -18,7 +17,6 @@ function getPurchaseList(){
                         "purchaseItemId" : value.id,
                         "item" : getItemById(value.item_id),
                         "buyer" : getUserById(value.buyer_id),
-                        "redeemer" : getUserById(value.redeemer_id),
                         "is_redeemed" : value.is_redeemed,
                         "message" : value.message
                     };
