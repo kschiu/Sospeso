@@ -10,7 +10,7 @@
           * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
               * Enable inline JS: add 'unsafe-inline' to default-src
       -->
-      <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+      <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
       <meta name="format-detection" content="telephone=no">
       <meta name="msapplication-tap-highlight" content="no">
       <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -33,17 +33,17 @@
         <form>
           <br>
            <h4>choose type of coffee</h4>
+           <input id="item_id"></input>
+           
           <!--for every pre-populated user-->
-          <button class="btn btn-primary btn-block">Coffee Item<!--insert coffee type--></button>
+          <!-- <button class="btn btn-block">Coffee Item insert coffee type</button> -->
           <hr>
           <h4>to whom?</h4>
+          <input id="redeemer_id"></input>
 <!--           <input type="text" placeholder="Full name">
           <textarea rows="5"></textarea> -->
           <!--for every pre-populated user-->
-          <button class="btn btn-primary btn-block">Redeemer<!--insert name of the redeemer--></button>
-          <hr>
-          <h3>Add a message:</h3>
-          <textarea rows="5"></textarea>
+          <!-- <button class="btn btn-block">Redeemer</button> -->
         </form>
 
         <nav class="bar bar-tab">
