@@ -24,8 +24,12 @@ function getItemFromStorage(){
 
 function populatePage(){
     getItemFromStorage();
-    setTimeout(function(){   
-        $("#itemName").append(item.name + "<br>" + window.localStorage.message);
+    setTimeout(function(){ 
+        if (window.localStorage.message == "null"){
+            $("#itemName").append(item.name);
+        } else {
+            $("#itemName").append(item.name + "<br>" + window.localStorage.message);
+        }
         new QRCode(document.getElementById("qrcode"), "http://192.241.168.227/api/v1/redeem/" + window.localStorage.purchaseItemId);
     }, 500)
 }
